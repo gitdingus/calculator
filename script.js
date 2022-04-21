@@ -78,7 +78,7 @@ function fillOperator(opValue){
         case 'add':
             operationStr = '+';
             break;
-        case 'subtract':
+        case 'minus':
             operationStr = '-';
             break;
         case 'multiply':
