@@ -94,12 +94,14 @@ function clearButtonClicked(value){
     }
 
     if (value === "CE"){
-        if (fillFirst){
-            firstNumStr = '';
-        }
-        else{
+        if (secondNumStr !== ''){
             secondNumStr = '';
         }
+        else if (secondNumStr === ''){
+            clearButtonClicked("AC");
+        }
+
+        display.textContent = '';
     }
 
 }
