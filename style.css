@@ -8,6 +8,22 @@
     padding: 10px;
 }
 
+#solar-panel{
+    display: flex;
+    justify-content:flex-end;
+    margin: 0px;
+    padding: 0px;
+}
+
+#solar-panel .square{
+    height: 16px;
+    width: 8px;
+    border: 2px solid black;
+    background-color: rgba(12, 3, 3, 0.541);
+    margin: 0px;
+    padding: 0px;
+}
+
 #display{
     flex: 1;
     border: 2px solid black;
@@ -15,6 +31,7 @@
     text-align: right;
     font-size: 18px;
     height: 25px;
+    margin-top: 0px;
 }
 
 .clear{
