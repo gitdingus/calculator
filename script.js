@@ -11,7 +11,7 @@ let result;
 
 function buttonClick(e){
     if (this.classList.contains("number")){
-        if (operationStr === ''){
+        if (operationStr === '' && fillFirst === false){
             firstNumStr = '';
             fillFirst = true;
         }
@@ -91,6 +91,15 @@ function clearButtonClicked(value){
 
         result = 0
         display.textContent = '';
+    }
+
+    if (value === "CE"){
+        if (fillFirst){
+            firstNumStr = '';
+        }
+        else{
+            secondNumStr = '';
+        }
     }
 
 }
