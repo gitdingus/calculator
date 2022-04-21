@@ -35,9 +35,24 @@ function buttonClick(e){
         }
     }
     else if (this.classList.contains("operator")){
-        fillOperator(this.value);
+        if (!fillFirst){
+            if (firstNumStr && secondNumStr && operationStr){
+                let x = Number(firstNumStr);
+                let y = Number(secondNumStr);
+                result = operate(operationStr, x, y);
+    
+                display.textContent = result;
+
+                firstNumStr = result.toString();
+                secondNumStr = '';
+            }
+        }
         fillFirst = false;
         addPeriod = true;
+
+        fillOperator(this.value);
+
+
     }
     else if (this.classList.contains("equals")){
         if (firstNumStr && secondNumStr && operationStr){
