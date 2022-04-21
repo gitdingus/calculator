@@ -25,6 +25,10 @@ function buttonClick(e){
         }
     }
     else if (this.classList.contains("period")){
+        if (operationStr === '' && fillFirst === false){
+            firstNumStr = '';
+            fillFirst = true;
+        }
         if (addPeriod){
             fillNumber('.');
         }
