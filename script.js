@@ -9,6 +9,36 @@ let secondNumStr = "";
 let operationStr = "";
 let result;
 
+window.addEventListener('keyup', (e) => {
+    const key = e.key;
+    const digit = /\d/
+    const buttonsArr = Array.from(buttons);
+    
+    if (key.match(digit)){
+        buttonsArr.find(button =>  button.value === key).click();
+    }
+    else if (key === '+'){
+        buttonsArr.find(button =>  button.value === "add").click();
+    }    
+    else if (key === '-'){
+        buttonsArr.find(button =>  button.value === "minus").click();
+    }
+    else if (key === '*'){
+        buttonsArr.find(button =>  button.value === "multiply").click();
+    }
+    else if (key === '/'){
+        buttonsArr.find(button =>  button.value === "divide").click();
+    }
+    else if (key === '=' || key === 'Enter'){
+        buttonsArr.find(button =>  button.value === "equals").click();
+    }
+    else if (key === '.'){
+        buttonsArr.find(button =>  button.value === "period").click();
+    }
+    else if (key === 'Delete' || key === 'Backspace'){
+        buttonsArr.find(button => button.value === "CE").click();
+    }
+});
 function buttonClick(e){
     if (this.classList.contains("number")){
         if (operationStr === '' && fillFirst === false){
