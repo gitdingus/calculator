@@ -26,6 +26,13 @@ function buttonClick(e){
         }
 
         addPeriod = false;
+        
+        if (fillFirst){
+            display.textContent = firstNumStr;
+        }
+        else {
+            display.textContent = secondNumStr;
+        }
     }
     else if (this.classList.contains("operator")){
         fillOperator(this.value);
@@ -58,7 +65,12 @@ function clearButtonClicked(value){
     if (value === "AC"){
         firstNumStr = '';
         secondNumStr = '';
-        operator = '';
+        operatorStr = '';
+
+        fillFirst = true;
+        addPeriod = true;
+
+        result = 0
         display.textContent = '';
     }
 
