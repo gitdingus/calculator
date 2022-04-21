@@ -1,3 +1,12 @@
+const buttons = document.querySelectorAll("button");
+const display = document.querySelector("#display");
+
+Array.from(buttons).forEach(button => button.addEventListener('click', buttonClick));
+
+function buttonClick(e){
+    console.log(`Value of button clicked: ${this.value}`);
+}
+
 function add(x, y){
     return x + y;
 }
