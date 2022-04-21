@@ -73,3 +73,11 @@ button:hover{
 button:active{
     border: 2px solid grey;
 }
+
+.operator {
+    background-color: rgb(166, 166, 216);
+}
+
+.clear {
+    background-color: rgb(216, 143, 143);
+}

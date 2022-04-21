@@ -49,8 +49,12 @@ function buttonClick(e){
                 let y = Number(secondNumStr);
                 result = operate(operationStr, x, y);
     
-                display.textContent = result;
-
+                if (result.toString().length > 21){
+                    display.textContent = result.toFixed(21);
+                }
+                else{
+                    display.textContent = result;
+                }
                 firstNumStr = result.toString();
                 secondNumStr = '';
             }
@@ -63,12 +67,20 @@ function buttonClick(e){
 
     }
     else if (this.classList.contains("equals")){
+        if (!(firstNumStr && secondNumStr && operationStr)){
+            return;
+        }
         if (firstNumStr && secondNumStr && operationStr){
             let x = Number(firstNumStr);
             let y = Number(secondNumStr);
             result = operate(operationStr, x, y);
 
-            display.textContent = result;
+            if (result.toString().length > 21){
+                display.textContent = result.toFixed(21);
+            }
+            else{
+                display.textContent = result;
+            }
         }
 
         firstNumStr = result.toString();
@@ -111,10 +123,10 @@ function clearButtonClicked(value){
 }
 
 function fillNumber(numChar){
-    if (fillFirst){
+    if (fillFirst && firstNumStr.length < 21){
         firstNumStr += numChar;
     }
-    else {
+    else if (!fillFirst && secondNumStr.length < 21){
         secondNumStr += numChar;
     }
 }
@@ -151,6 +163,9 @@ function multiply (x,y){
 }
 
 function divide (x, y){
+    if (y === 0){
+        return 'snarky error message';
+    }
     return x / y;
 }
 
