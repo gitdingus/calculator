@@ -11,6 +11,10 @@ let result;
 
 function buttonClick(e){
     if (this.classList.contains("number")){
+        if (operationStr === ''){
+            firstNumStr = '';
+            fillFirst = true;
+        }
         fillNumber(this.value);
 
         if (fillFirst){
@@ -63,11 +67,11 @@ function buttonClick(e){
             display.textContent = result;
         }
 
-        firstNumStr = '';
+        firstNumStr = result.toString();
         secondNumStr = '';
         operationStr = '';
 
-        fillFirst = true;
+        fillFirst = false;
         addPeriod = true;
     }
     else if (this.classList.contains("clear")){
